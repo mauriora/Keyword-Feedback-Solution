@@ -1,0 +1,16 @@
+[submodule "app/WebPart-Keyword-Feedback"]
+	path = app/WebPart-Keyword-Feedback
+	url = https://github.com/mauriora/WebPart-Keyword-Feedback.git
+	branch = main
+[submodule "app/Keyword-Feedback-Extension"]
+	path = app/Keyword-Feedback-Extension
+	url = https://github.com/mauriora/Keyword-Feedback-Extension.git
+	branch = main
+[submodule "shared/Utils-SPFx-Controls-React"]
+	path = shared/Utils-SPFx-Controls-React
+	url = https://github.com/mauriora/Utils-SPFx-Controls-React.git
+	branch = main
+[submodule "shared/Controller-SharePoint-List"]
+	path = shared/Controller-SharePoint-List
+	url = https://github.com/mauriora/Controller-SharePoint-List.git
+	branch = main

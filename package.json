@@ -1,0 +1,26 @@
+{
+    "name": "@mauriora/keyword-feedback-solution",
+    "version": "0.0.2",
+    "repository": {
+        "url": "https://github.com/mauriora/screen-controller-mono-repo"
+    },
+    "private": true,
+    "workspaces": [
+        "shared/**",
+        "app/**"
+    ],
+    "scripts": {
+        "clean": "lerna clean && rmdir /s /q node_modules",
+        "serve-extension": "yarn workspace @mauriora/keyword-feedback-extension serve",
+        "build-extension": "yarn workspace @mauriora/keyword-feedback-extension build",
+        "serve-webpart": "yarn workspace @mauriora/webpart-keyword-feedback serve",
+        "build-webpart": "yarn workspace @mauriora/webpart-keyword-feedback build",
+        "clean-webpart": "yarn workspace @mauriora/webpart-keyword-feedback clean",
+        "build-shared": "yarn workspace @mauriora/controller-sharepoint-list build && yarn workspace @mauriora/utils-spfx-controls-react build",
+        "clean-shared": "yarn workspace @mauriora/controller-sharepoint-list clean && yarn workspace @mauriora/utils-spfx-controls-react clean"
+    },
+    "devDependencies": {
+        "lerna": "^4.0.0"
+    },
+    "dependencies": {}
+}
