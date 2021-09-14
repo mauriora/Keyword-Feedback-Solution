@@ -1,6 +1,6 @@
 # Introduction 
-The extensions in this solution allow the user to enter a keyword, e.g. "How do you feel today?". By using keywords,
-users can re-use terms entered previously. The keyword is stored in a minimalistic list with keywords enabled.
+This SharePoint extension or webpart enables a user to enter a keyword, e.g. "How do you feel today?". By using keywords,
+users can re-use terms entered previously by anyone. The keyword is stored in a minimalistic list with keywords enabled.
 
 ## Description
 The label is the displayname of the "Enterprise Keyword" colummn. The hint text is the description. To chnage those:
@@ -38,18 +38,21 @@ cd webpart-keyword-feedback
 lerna bootstrap
 yarn build-shared
 ```
-either
+### either serve the webpart
 ```
 yarn serve-webpart
 ```
-and [browse to the workbench on *YOUR-SITE*](https://YOUR-DOMAIN.sharepoint.com/sites/YOUR-SITE/_layouts/15/workbench.aspx)
-or:
+and:
+- [browse to the workbench on *YOUR-SITE*](https://YOUR-DOMAIN.sharepoint.com/sites/YOUR-SITE/_layouts/15/workbench.aspx)
+- add the webpart to the page
+
+### or serve the extension
 - edit app/Keyword-Feedback-Extension/config/serve.json
 - run:
 ```
 yarn serve-extension
 ```
-add the webpart to the page
+
 
 # Build and install
 1. In a solution terminal execute `yarn workspace @mauriora/webpart-example serve`
@@ -73,41 +76,3 @@ add the webpart to the page
 # Contribute
 Use the minmal path to awesomeness and please create a branch for your contribution.
 Then do a pull request to merge your branch into the main branch.
-
-## To do list
-
-### Documentation
-1. [ ] Architecture overview
-
-
-### Framkework
-1. [ ] Replace lerna with rushstack
-2. [ ] Create build pipeline
-    1. [ ] .sppkg become artifacts
-    2. [ ] sub modules npm packages become artifacts
-
-### Implementation
-1. [ ] Styling (js based)
-2. Controller
-    1. [ ] Single Column Taxonomy fix through TaxCatchAll field
-
-### Modules
-1. [ ] Utils module
-1. [ ] Theming/branding module per client
-
-
-# Create new project
-- Fork the solution as *YOUR-SOLUTION*
-- Clone the forked solution
-- Fork the starting app project as *YOUR-PROJECT*
-- Add the *YOUR-PROJECT* as submodule to *YOUR-SOLUTION* using the app GitExtenson, manage sub modules
-- Remove the starting project, and any other you don't need, from YOUR-solution using the app GitExtenson, manage sub modules
-- call `yarn initguids` in apps/*YOUR-PROJECT*
-- rename *YOUR-.....* in:
-    - app/*YOUR-PROJECT*
-        - packgae.json
-        - src/webparts/*YOUR-WEBPART*
-            - *YOUR-WEBPART*.manifest.json
-        - config
-            - config.json
-            - package-solution.json
