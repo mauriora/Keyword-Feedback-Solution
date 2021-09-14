@@ -82,7 +82,7 @@ Then do a pull request to merge your branch into the main branch.
 
 ### Framkework
 1. [ ] Replace lerna with rushstack
-2. [ ] Create Azure build pipeline
+2. [ ] Create build pipeline
     1. [ ] .sppkg become artifacts
     2. [ ] sub modules npm packages become artifacts
 
