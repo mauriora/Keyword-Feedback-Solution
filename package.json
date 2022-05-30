@@ -1,6 +1,6 @@
 {
     "name": "@mauriora/keyword-feedback-solution",
-    "version": "0.0.3",
+    "version": "0.1.0",
     "repository": {
         "url": "https://github.com/mauriora/screen-controller-mono-repo"
     },
@@ -10,6 +10,9 @@
         "app/**"
     ],
     "scripts": {
+        "build": "yarn workspaces foreach --verbose --topological --parallel --interlaced run build",
+        "rebuild": "yarn workspaces foreach --verbose --topological --interlaced run rebuild",
+        "version": "yarn version check --interactive && yarn version apply --all && yarn workspaces foreach --verbose --topological --parallel run version",
         "serve-extension": "yarn workspace @mauriora/keyword-feedback-extension serve",
         "build-extension": "yarn workspace @mauriora/keyword-feedback-extension build",
         "clean-extension": "yarn workspace @mauriora/keyword-feedback-extension clean",
@@ -17,13 +20,14 @@
         "build-webpart": "yarn workspace @mauriora/webpart-keyword-feedback build",
         "clean-webpart": "yarn workspace @mauriora/webpart-keyword-feedback clean",
         "build-shared": "yarn workspace @mauriora/controller-sharepoint-list build && yarn workspace @mauriora/utils-spfx-controls-react build",
-        "build-all": "yarn build-shared && yarn build-webpart && yarn build-extension",
         "clean-shared": "yarn workspace @mauriora/controller-sharepoint-list clean && yarn workspace @mauriora/utils-spfx-controls-react clean",
         "clean-all": "yarn clean-shared && yarn clean-webpart && yarn clean-extension",
         "clean-node-modules": "lerna clean && rmdir /s node_modules"
     },
     "devDependencies": {
-        "lerna": "^4.0.0"
+        "@mauriora/workspace-tools": "^0.2.3",
+        "rimraf": "^3.0.2",
+        "yarn": "^1.0.0"
     },
-    "dependencies": {}
+    "packageManager": "yarn@3.2.1"
 }
